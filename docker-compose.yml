@@ -44,7 +44,7 @@ services:
       io.balena.features.procfs: 1
 
   multiplexer:
-    image: mrsontaya/hm-multiplexer:a1fc09b
+    image: mrsontaya/hm-multiplexer:latest
     restart: always
     depends_on:
       - helium-miner
