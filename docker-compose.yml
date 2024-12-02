@@ -3,7 +3,7 @@ version: '2'
 services:
 
   gateway-config:
-    image: nebraltd/hm-config:arm64-a198b83
+    image: mrsontaya/hm-config:arm64-a198b83
     depends_on:
       - dbus-session
       - helium-miner
@@ -28,7 +28,7 @@ services:
     stop_signal: SIGINT
 
   packet-forwarder:
-    image: nebraltd/hm-pktfwd:5c3c90a
+    image: mrsontaya/hm-pktfwd:5c3c90a
     depends_on:
       - multiplexer
     restart: always
@@ -44,7 +44,7 @@ services:
       io.balena.features.procfs: 1
 
   multiplexer:
-    image: nebraltd/hm-multiplexer:a1fc09b
+    image: mrsontaya/hm-multiplexer:a1fc09b
     restart: always
     depends_on:
       - helium-miner
@@ -60,7 +60,7 @@ services:
       - "1681"
 
   helium-miner:
-    image: nebraltd/hm-gatewayrs:arm64-5428419
+    image: mrsontaya/hm-gatewayrs:arm64-5428419
     depends_on:
       - diagnostics
     cap_add:
@@ -79,7 +79,7 @@ services:
       - nebra:/var/nebra
 
   diagnostics:
-    image: nebraltd/hm-diag:arm64-bac451c
+    image: mrsontaya/hm-diag:arm64-bac451c
     depends_on:
       - dbus-session
     environment:
@@ -110,7 +110,7 @@ services:
       io.balena.features.balena-api: 1
 
   dbus-session:
-    image: balenablocks/dbus:rpi-0.0.2
+    image: mrsontaya/dbus:rpi-0.0.2
     restart: always
     volumes:
       - dbus:/session/dbus
