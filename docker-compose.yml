@@ -79,7 +79,7 @@ services:
       - nebra:/var/nebra
 
   diagnostics:
-    image: mrsontaya/hm-diag:arm64-bac451c
+    image: mrsontaya/hm-diag:arm64-e35aaf7
     depends_on:
       - dbus-session
     environment:
